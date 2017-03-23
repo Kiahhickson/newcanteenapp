@@ -1,15 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Add New Product', new_product_path %>
+<br>
+<hr>
 <h1>Listing Products</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image Url</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
 
     <% @products.each do |product| %>
       <tr>
         <td><%= product.title %></td>
         <td><%= product.description %></td>
         <td><%= product.image_url %></td>
-        <td><%= product.price %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td><%= product.category_id %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
@@ -19,8 +35,5 @@
 
 </table>
 
-<br>
-
-<%= link_to 'New Product', new_product_path %>
 
 

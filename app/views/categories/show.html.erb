@@ -8,7 +8,7 @@
 
 <% Product.where(category_id: @category_id).each do |product| %>
   <li> <%= product.title %></li>
-  <li><%= product.price %></li>
+  <li><%= number_to_currency(product.price) %></li>
 <% end %>
 
 
