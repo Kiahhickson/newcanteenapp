@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
     
   get "/pages/:page" => "pages#show"
-
+ 
   root 'store#index', as: 'store'
   
 
