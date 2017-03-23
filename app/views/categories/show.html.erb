@@ -7,8 +7,10 @@
 </p>
 
 <% Product.where(category_id: @category_id).each do |product| %>
-  <li> <%= product.name %></li>
+  <li> <%= product.title %></li>
+  <li><%= product.price %></li>
 <% end %>
+
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
