@@ -28,8 +28,9 @@
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
+    <%= f.label :category_id %><br>
     <%= select_tag(:category_id, options_for_select(categories), :prompt => "Select One") %>
+  
   </div>
   <div class="actions">
     <%= f.submit %>
